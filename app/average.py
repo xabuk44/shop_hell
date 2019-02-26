@@ -1,6 +1,6 @@
-def shop_sum(week_money):
-    return sum(week_money)
-
+# def shop_sum(week_money):
+#     return sum(week_money)
+#
 # def shop_avg(week_money):
 #     import numpy
 #     return numpy.average(week_money)
@@ -44,6 +44,13 @@ def shop_max(shop_sum):
         if oid is shop_sum:
             return objname
 
+
+shop_1_sum = sum([1000, 2000, 3000, 1000, 4000, 6000, 7000])
+shop_2_sum = sum([4000, 2000, 3000, 1000, 4000, 6000, 7000])
+shop_3_sum = sum([3000, 2000, 3000, 1000, 4000, 6000, 7000])
+shop_sum_all = [shop_1_sum, shop_2_sum, shop_3_sum]
+print(shop_max(max(shop_sum_all)))
+
 def shop_money(week_money):
     a = sum(week_money)
     week_money.sort()
@@ -51,9 +58,13 @@ def shop_money(week_money):
     b = numpy.average(week_money)
     return a, b, min(week_money), max(week_money), week_money[4:7]
 
-shop_1_sum = sum([5000, 2000])
-shop_2_sum = sum([5000, 2000])
-shop_3_sum = sum([1000, 2000])
-shop_sum_all = [shop_1_sum, shop_2_sum, shop_3_sum]
 
-print(shop_max(max(shop_sum_all)))
+
+shop_1 = shop_money([1000, 2000, 3000, 1000, 4000, 6000, 7000])
+shop_2 = shop_money([4000, 2000, 3000, 1000, 4000, 6000, 7000])
+shop_3 = shop_money([3000, 2000, 3000, 1000, 4000, 6000, 7000])
+
+best_sum_shop = [shop_1[0:1], shop_2[0:1], shop_3[0:1]]
+best_sum_shop = max(best_sum_shop)
+best_sum_shop = ' '.join([str(i) for i in best_sum_shop])
+print(best_sum_shop)
