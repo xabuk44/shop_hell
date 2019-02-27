@@ -1,4 +1,4 @@
-def sum_shop(shop):
+def sum_shop(shop_list):
     return sum(shop[1:])
 
 
